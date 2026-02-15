@@ -5,7 +5,3 @@ export default function Home() {
     </div>
   )
 }
-
-export function Tabela(){
-
-}
