@@ -6,15 +6,14 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="w-full bg-gray-900 text-white shadow-md">
+    <header className="w-full text-white shadow-md">
       <div className="mx-auto px-6 py-4 flex items-center justify-between">
         
         <div className="text-2xl font-bold tracking-wide cursor-pointer">
-            <Link href="/">MyApp</Link>
+            <Link href="/"><img src="/logo.png" alt="Logo" className="h-15 w-auto" /></Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8 text-sm font-medium">
+        <nav className="hidden md:flex gap-8 text-sm font-medium text-black">
           <a href="#" className="hover:text-indigo-400 transition-colors">
             Home
           </a>

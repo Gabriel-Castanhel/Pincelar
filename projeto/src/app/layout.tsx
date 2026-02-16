@@ -12,7 +12,6 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className="bg-white min-h-screen">
 
-        <Header />
         {children}
       </body>
     </html>
