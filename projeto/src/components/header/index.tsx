@@ -6,14 +6,14 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="w-full text-white shadow-md">
-      <div className="mx-auto px-6 py-4 flex items-center justify-between">
+    <header className=" w-full text-white shadow-md">
+      <div className="inline-bloc p-4 bg-nav mx-auto flex items-center justify-between">
         
         <div className="text-2xl font-bold tracking-wide cursor-pointer">
-            <Link href="/"><img src="/logo.png" alt="Logo" className="h-15 w-auto" /></Link>
+            <Link href="/"><img src="/logo.png" alt="Logo" className="h-15 w-auto p-2" /></Link>
         </div>
 
-        <nav className="hidden md:flex gap-8 text-sm font-medium text-black">
+        <nav className="hidden md:flex gap-8 text-sm font-medium text-black p-4">
           <a href="#" className="hover:text-indigo-400 transition-colors">
             Home
           </a>
