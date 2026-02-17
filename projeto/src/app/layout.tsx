@@ -1,4 +1,3 @@
-import { Header } from '@/components/header';
  // @ts-ignore
 import './globals.css';
 

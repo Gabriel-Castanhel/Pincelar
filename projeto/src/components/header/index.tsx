@@ -1,59 +1,23 @@
-"use client";
-import { useState } from "react"
 import Link from "next/link";
 
-export function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-
+export default function Header() {
   return (
-    <header className=" w-full text-white shadow-md">
-      <div className="inline-bloc p-4 bg-nav mx-auto flex items-center justify-between">
-        
-        <div className="text-2xl font-bold tracking-wide cursor-pointer">
-            <Link href="/"><img src="/logo.png" alt="Logo" className="h-15 w-auto p-2" /></Link>
-        </div>
+<div className="absolute w-full text-white p-10">
+  <div className="gap-6 w-full flex justify-between items-center">
+    <h1 className="text-5xl font-bold">Pincelar</h1>
 
-        <nav className="hidden md:flex gap-8 text-sm font-medium text-black p-4">
-          <a href="#" className="hover:text-indigo-400 transition-colors">
-            Home
-          </a>
-          <a href="#" className="hover:text-indigo-400 transition-colors">
-            Sobre
-          </a>
-          <a href="#" className="hover:text-indigo-400 transition-colors">
-            Serviços
-          </a>
-          <a href="#" className="hover:text-indigo-400 transition-colors">
-            Contato
-          </a>
-        </nav>
+    <ul className="flex gap-6 text-lg font-medium justify-center items-center">
+      <li><Link href="/">Home</Link></li>
+      <li><Link href="/sobre">Sobre</Link></li>
+      <li><Link href="/contato">Contato</Link></li>
+      <li>
+        <Link href="/login" className="flex justify-center items-center w-25 h-8 border border-white gap-10">
+          Login
+        </Link>
+      </li>
+    </ul>
+  </div>
+</div>
 
-        <button
-          className="md:hidden flex flex-col gap-1"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <span className="w-6 h-0.5 bg-white"></span>
-          <span className="w-6 h-0.5 bg-white"></span>
-          <span className="w-6 h-0.5 bg-white"></span>
-        </button>
-      </div>
-
-      {isOpen && (
-        <div className="md:hidden bg-gray-800 px-6 pb-4 flex flex-col gap-4 text-sm">
-          <a href="#" className="hover:text-indigo-400 transition-colors">
-            Home
-          </a>
-          <a href="#" className="hover:text-indigo-400 transition-colors">
-            Sobre
-          </a>
-          <a href="#" className="hover:text-indigo-400 transition-colors">
-            Serviços
-          </a>
-          <a href="#" className="hover:text-indigo-400 transition-colors">
-            Contato
-          </a>
-        </div>
-      )}
-    </header>
   )
 }
