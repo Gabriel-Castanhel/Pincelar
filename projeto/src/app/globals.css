@@ -2,19 +2,40 @@
 
 
 @theme {
+
+  /* COLORS */
   --color-1: #F24182;
   --color-2: #D907A1;
   --color-3: #7D0D8C;
   --color-4: #550F8F;
   --color-5: #F29E38;
   --color-6: #F26E50;
+
+  /* TEXT */
   --color-text: #000000;
+
+  /* BACKGROUND */
   --color-background: #E0E0E0;
 
+
+  /* FONTS */
   --font-subtitle: "Poppins", sans-serif;
   --font-banner: "WinterDraw", cursive;
   --font-text: "Open Sans", sans-serif;
 
+}
+
+.text-gradient-primary {
+    --tw-gradient-position: to right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+    --tw-gradient-from: #F24182;
+    --tw-gradient-via: #D907A1;
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
+    --tw-gradient-to: #7D0D8C;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    background-clip: text;
+    color: transparent;
 }
 
 @layer utilities {
