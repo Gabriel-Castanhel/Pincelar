@@ -1,4 +1,3 @@
- // @ts-ignore
 import './globals.css';
 
 
@@ -9,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className="bg-white min-h-screen">
+      <body className="bg-white min-h-screen scrollbar-custom">
 
         {children}
       </body>
