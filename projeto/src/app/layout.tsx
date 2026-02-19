@@ -7,8 +7,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <body className="bg-white min-h-screen scrollbar-custom">
+    <html lang="pt-br" className='h-full w-full'>
+      <body className="bg-white min-h-screen min-w-screen scrollbar-custom">
 
         {children}
       </body>

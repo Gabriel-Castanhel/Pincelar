@@ -1,137 +1,53 @@
 import React from "react";
 
-export default function index() {
+interface Obra {
+  id: number;
+  title: string;
+  descricao: string;
+}
+
+interface Props {
+  obra: Obra;
+}
+
+// 1. Componente Filho: Melhoramos o padding e o ajuste da imagem
+const CardFilho = ({ obra }: Props) => {
   return (
-    <div className="flex gap-30">
-      <article className="max-w-sm overflow-hidden rounded-2xl bg-white shadow-xl transition-transform hover:scale-105 dark:bg-slate-800">
-        <figure className="aspect-video overflow-hidden">
-          <img
-            src="/menina.avif"
-            alt="Preview do componente Tailwind 4"
-            className="h-full w-full object-cover"
-          />
-        </figure>
+    <article className="flex flex-col overflow-hidden rounded-xl bg-white shadow-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300">
+      <figure className="w-full aspect-square overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=60"
+          alt={obra.title}
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+        />
+      </figure>
+      <div className="p-5 flex flex-col gap-2">
+        <h3 className="text-xl font-bold text-gray-800">{obra.title}</h3>
+        <p className="text-gray-600 text-sm leading-relaxed">{obra.descricao}</p>
+        <span className="">R$ 200</span>
+        <button className="mt-4 w-full py-2 bg-[#F26E10] text-white rounded-lg font-medium hover:bg-[#d45d0d] transition-colors">
+          Ver Detalhes
+        </button>
+      </div>
+    </article>
+  );
+};
 
-        <div className="p-6">
-          <span className="inline-block rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700 uppercase tracking-wide dark:bg-sky-900/30 dark:text-sky-400">
-            Novidade v4.1
-          </span>
+// 2. Componente Pai: Aqui acontece a mágica da responsividade
+const CardPai = () => {
+  const obras = [
+    { id: 1, title: "Nascer do Sol", descricao: "Uma obra vibrante capturando a luz da manhã." },
+    { id: 2, title: "Abstração Azul", descricao: "Exploração de formas e tons oceânicos profundos." },
+    { id: 3, title: "Retrato Urbano", descricao: "A vida cotidiana expressa em traços modernos." },
+  ];
 
-          <h3 className="mt-4 text-2xl font-bold text-slate-900 text-shadow-sm shadow-sky-200 dark:text-white">
-            Design Reimaginado
-          </h3>
-
-          <p className="mt-3 text-base leading-relaxed text-slate-600 dark:text-slate-400">
-            O Tailwind CSS 4.1 introduz um motor de alta performance em Rust,
-            configuração via CSS e novas utilidades de sombras e máscaras.
-          </p>
-
-          <footer className="mt-6 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-sky-400 to-indigo-500"></div>
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Equipe Dev
-              </span>
-            </div>
-
-            <a
-              href="#"
-              className="group flex items-center gap-1 text-sm font-semibold text-sky-600 hover:text-sky-700 dark:text-sky-400"
-            >
-              Ler mais
-              <span className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </a>
-          </footer>
-        </div>
-      </article>
-      <article className="max-w-sm overflow-hidden rounded-2xl bg-white shadow-xl transition-transform hover:scale-105 dark:bg-slate-800">
-        <figure className="aspect-video overflow-hidden">
-          <img
-            src="/gato.jpg"
-            alt="Preview do componente Tailwind 4"
-            className="h-full w-full object-cover"
-          />
-        </figure>
-
-        <div className="p-6">
-          <span className="inline-block rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700 uppercase tracking-wide dark:bg-sky-900/30 dark:text-sky-400">
-            Novidade v4.1
-          </span>
-
-          <h3 className="mt-4 text-2xl font-bold text-slate-900 text-shadow-sm shadow-sky-200 dark:text-white">
-            Design Reimaginado
-          </h3>
-
-          <p className="mt-3 text-base leading-relaxed text-slate-600 dark:text-slate-400">
-            O Tailwind CSS 4.1 introduz um motor de alta performance em Rust,
-            configuração via CSS e novas utilidades de sombras e máscaras.
-          </p>
-
-          <footer className="mt-6 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-sky-400 to-indigo-500"></div>
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Equipe Dev
-              </span>
-            </div>
-
-            <a
-              href="#"
-              className="group flex items-center gap-1 text-sm font-semibold text-sky-600 hover:text-sky-700 dark:text-sky-400"
-            >
-              Ler mais
-              <span className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </a>
-          </footer>
-        </div>
-      </article>
-      <article className="max-w-sm overflow-hidden rounded-2xl bg-white shadow-xl transition-transform hover:scale-105 dark:bg-slate-800">
-        <figure className="aspect-video overflow-hidden">
-          <img
-            src="/quimera.jpg"
-            alt="Preview do componente Tailwind 4"
-            className="h-full w-full object-cover"
-          />
-        </figure>
-
-        <div className="p-6">
-          <span className="inline-block rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700 uppercase tracking-wide dark:bg-sky-900/30 dark:text-sky-400">
-            Novidade v4.1
-          </span>
-
-          <h3 className="mt-4 text-2xl font-bold text-slate-900 text-shadow-sm shadow-sky-200 dark:text-white">
-            Design Reimaginado
-          </h3>
-
-          <p className="mt-3 text-base leading-relaxed text-slate-600 dark:text-slate-400">
-            O Tailwind CSS 4.1 introduz um motor de alta performance em Rust,
-            configuração via CSS e novas utilidades de sombras e máscaras.
-          </p>
-
-          <footer className="mt-6 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-sky-400 to-indigo-500"></div>
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Equipe Dev
-              </span>
-            </div>
-
-            <a
-              href="#"
-              className="group flex items-center gap-1 text-sm font-semibold text-sky-600 hover:text-sky-700 dark:text-sky-400"
-            >
-              Ler mais
-              <span className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </a>
-          </footer>
-        </div>
-      </article>
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 w-full max-w-7xl mx-auto px-4">
+      {obras.map((obra) => (
+        <CardFilho key={obra.id} obra={obra} />
+      ))}
     </div>
   );
-}
+};
+
+export default CardPai;
