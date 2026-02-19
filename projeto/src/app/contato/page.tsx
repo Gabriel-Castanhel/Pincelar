@@ -6,19 +6,17 @@ export default function Contato() {
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         
-        {/* Cabeçalho da Página */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold font-banner text-gray-900 sm:text-5xl">
             Entre em <span className="text-[#F26E10]">Contato</span>
           </h1>
-          <p className="mt-4 text-xl text-gray-600 font-light">
+          <p className="mt-4 text-xl text-gray-600 font-medium">
             Tem alguma dúvida sobre uma obra ou quer expor sua arte? Adoraríamos ouvir você.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl shadow-xl overflow-hidden">
           
-          {/* Coluna 1: Informações de Contato */}
           <div className="bg-gradient-to-br from-[#F26E10] to-[#550F8F] p-10 text-white flex flex-col justify-between">
             <div>
               <h2 className="text-3xl font-bold mb-8">Informações de Contato</h2>
@@ -38,17 +36,15 @@ export default function Contato() {
               </div>
             </div>
 
-            {/* Redes Sociais */}
             <div className="mt-12">
               <p className="text-sm uppercase tracking-widest opacity-70 mb-4">Siga-nos</p>
               <div className="flex gap-6">
-                <a href="#" className="hover:scale-125 transition-transform"><FaInstagram size={28} /></a>
+                <a href="https://www.instagram.com/pncelar/" target='blank_' className="hover:scale-125 transition-transform"><FaInstagram size={28} /></a>
                 
               </div>
             </div>
           </div>
 
-          {/* Coluna 2: Formulário */}
           <div className="p-10">
             <form className="grid grid-cols-1 gap-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -87,7 +83,9 @@ export default function Contato() {
                 <textarea
                   id="mensagem"
                   rows={4}
-                  className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-[#F26E10] focus:border-[#F26E10] border p-3"
+                  cols={30}
+                  min-height={120}
+                  className="mt-1 block w-full min-h-50 max-h-150 border-gray-300 rounded-lg shadow-sm focus:ring-[#F26E10] focus:border-[#F26E10] border p-3"
                   placeholder="Como podemos ajudar?"
                 ></textarea>
               </div>

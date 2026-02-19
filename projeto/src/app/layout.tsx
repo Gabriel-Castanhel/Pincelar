@@ -8,8 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className='h-full w-full'>
-      <body className="bg-white min-h-screen min-w-screen scrollbar-custom">
-
+      <body className="bg-white min-h-screen min-w-screen scrollbar-custom ">
         {children}
       </body>
     </html>

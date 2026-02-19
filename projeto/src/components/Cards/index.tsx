@@ -10,7 +10,6 @@ interface Props {
   obra: Obra;
 }
 
-// 1. Componente Filho: Melhoramos o padding e o ajuste da imagem
 const CardFilho = ({ obra }: Props) => {
   return (
     <article className="flex flex-col overflow-hidden rounded-xl bg-white shadow-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300">
@@ -33,7 +32,6 @@ const CardFilho = ({ obra }: Props) => {
   );
 };
 
-// 2. Componente Pai: Aqui acontece a mágica da responsividade
 const CardPai = () => {
   const obras = [
     { id: 1, title: "Nascer do Sol", descricao: "Uma obra vibrante capturando a luz da manhã." },
@@ -42,7 +40,7 @@ const CardPai = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 w-full max-w-7xl mx-auto px-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pt-10 gap-6 md:gap-10 w-full max-w-7xl mx-auto px-4">
       {obras.map((obra) => (
         <CardFilho key={obra.id} obra={obra} />
       ))}
