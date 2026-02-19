@@ -1,5 +1,6 @@
-import Header from "@/components/header";
+import Header from "@/components/Header";
 import Hero_banner from "@/components/Hero_banner";
+import Cards from "@/components/Cards";
 
 // Icones
 import { FaPalette } from "react-icons/fa";
@@ -22,8 +23,8 @@ export default function Home() {
           Por que escolher o Pincelar?
         </h1>
         <div className="flex gap-4 w-2/3">
-          <div className="bg-color-2 w-full max-w-md flex flex-col gap-4 text-center">
-            <FaPalette className="text-blue-500 text-5xl hover:text-red-500 transition-colors flex justify-center items-center" />
+          <div className="bg-color-2 w-full max-w-md flex flex-col gap-4 text-center justify-center items-center">
+            <FaPalette className="text-2 text-5xl hover:text-3 transition-colors flex justify-center items-center" />
 
             <h2 className="text-2xl font-bold mb-4">Variedade de Produtos</h2>
             <p>
@@ -31,8 +32,8 @@ export default function Home() {
               dedicação.
             </p>
           </div>
-          <div className="bg-color-2 w-full max-w-md flex flex-col gap-4 text-center">
-            <GiReceiveMoney className="text-blue-500 text-5xl hover:text-red-500 transition-colors flex justify-center items-center" />
+          <div className="bg-color-2 w-full max-w-md flex flex-col gap-4 text-center justify-center items-center">
+            <GiReceiveMoney className="text-2 text-5xl hover:text-3 transition-colors flex justify-center items-center" />
 
             <h2 className="text-2xl font-bold mb-4">Qualidade Garantida</h2>
             <p className="text-center">
@@ -40,8 +41,8 @@ export default function Home() {
               intermediários.
             </p>
           </div>
-          <div className="bg-color-2 w-full max-w-md flex flex-col gap-4 text-center">
-            <FaHandsHelping className="text-blue-500 text-5xl hover:text-red-500 transition-colors flex justify-center items-center" />
+          <div className="bg-color-2 w-full max-w-md flex flex-col gap-4 text-center justify-center items-center">
+            <FaHandsHelping className="text-2 text-5xl hover:text-3 transition-colors flex justify-center items-center" />
 
             <h2 className="text-2xl font-bold mb-4">
               Atendimento Personalizado
@@ -52,6 +53,11 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="h-150 flex flex-col items-center justify-center gap-8">
+        <h1 className="text-4xl font-bold text-center mt-8 text-gradient-primary font-banner">Obras em destaque</h1>
+        <Cards />
       </section>
     </div>
   );
