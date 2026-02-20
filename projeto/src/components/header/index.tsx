@@ -20,7 +20,7 @@ export default function Header() {
             <ul className="flex gap-8 text-base font-medium font-banner">
               <li>
                 <Link
-                  href="/"
+                  href="em-desenvolvimento"
                   className="hover:text-orange-500 transition-colors"
                 >
                   catálogo
@@ -28,7 +28,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/artistas"
+                  href="/em-desenvolvimento"
                   className="hover:text-orange-500 transition-colors"
                 >
                   artistas
@@ -36,7 +36,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/sobre"
+                  href="/em-desenvolvimento"
                   className="hover:text-orange-500 transition-colors"
                 >
                   sobre
