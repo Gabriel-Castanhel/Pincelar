@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { Prisma } from ".prisma/client/default";
 
 export async function POST(request: Request) {
   try {
@@ -35,7 +36,7 @@ export async function GET() {
   try {
     const posts = await prisma.post.findMany({
       include: { author: true },
-      orderBy: { createdAt: "desc" } as Prisma.PostOrderByWithRelationInput,
+      orderBy: { createdAt: "desc" },
     });
     return NextResponse.json(posts);
   } catch (error) {
