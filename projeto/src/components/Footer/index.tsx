@@ -10,7 +10,7 @@ export default function Footer() {
               Pincelar
             </h2>
             <p className="mt-4 text-sm text-gray-200 leading-relaxed">
-              Criando experiências digitais modernas, minimalistas e
+              Criando experiências digitais modernas e
               impactantes.
             </p>
           </div>

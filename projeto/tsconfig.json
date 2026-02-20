@@ -1,6 +1,7 @@
 {
-  "compilerOptions": {
-    "target": "ES2017",
+  "compilerOptions": {    
+    "target": "ES2023",
+    "typeRoots": ["node_modules/@types", "node_modules/prisma/types"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -13,6 +14,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "ignoreDeprecations": "6.0",
     "plugins": [
       {
         "name": "next"

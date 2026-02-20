@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero_banner from "@/components/Hero_banner";
 import Cards from "@/components/Cards";
 import Footer from "@/components/Footer";
+import Arte from "@/components/Arte";
 
 import Link from "next/link";
 
@@ -23,7 +24,6 @@ export default function Home() {
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-            {/* Item 1 */}
             <div className="flex flex-col gap-4 text-center items-center p-4">
               <FaPalette className="text-orange-500 text-5xl hover:scale-110 transition-transform" />
               <h2 className="text-2xl font-bold">Variedade de Produtos</h2>
@@ -62,6 +62,10 @@ export default function Home() {
         <div className="w-full max-w-7xl">
           <Cards />
         </div>
+      </section>
+
+      <section>
+        <Arte />
       </section>
 
 
