@@ -5,7 +5,6 @@ import Link from "next/link";
 import { FaUser, FaEnvelope, FaLock, FaCheckCircle } from "react-icons/fa";
 
 export default function Cadastro() {
-  // 1. Criar o estado para o formulário
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -62,7 +61,6 @@ export default function Cadastro() {
           <h2 className="text-3xl font-bold text-gray-900">Crie sua conta</h2>
         </div>
 
-        {/* 3. Adicionar o onSubmit no formulário */}
         <form onSubmit={handleRegister} className="space-y-4">
           <div className="space-y-1">
             <label className="text-sm font-semibold text-gray-700 ml-1">Nome Completo</label>

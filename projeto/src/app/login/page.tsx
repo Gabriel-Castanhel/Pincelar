@@ -30,7 +30,7 @@ export default function Login() {
 
     if (response.ok) {
       alert("Bem-vindo de volta!");
-      router.push("/dashboard"); // Redireciona para a página principal
+      router.push("/"); 
     } else {
       alert(data.error);
     }
