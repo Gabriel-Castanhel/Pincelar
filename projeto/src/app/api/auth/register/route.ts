@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma"; // Verifique se o caminho da sua Lib está correto
+import { prisma } from "@/lib/prisma"; 
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 

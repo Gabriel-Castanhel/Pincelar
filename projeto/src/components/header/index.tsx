@@ -1,6 +1,10 @@
+'use client';
+
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
 
 export default function Header() {
+  const { data: session, status } = useSession();
   return (
     <header className="bg-white w-full border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,7 +49,6 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* MENU DIREITO (Escondido no Mobile) */}
           <nav className="hidden md:block">
             <ul className="flex gap-6 items-center font-banner">
               <li>
@@ -61,6 +64,29 @@ export default function Header() {
                   Login
                 </Link>
               </li>
+
+              <div>
+                {status === "authenticated" ? (
+                  <div className="flex gap-4 items-center">
+                    <span>
+                      Olá, <strong>{session.user?.name}</strong>
+                    </span>
+                    <button
+                      onClick={() => signOut()}
+                      className="text-sm text-red-500 underline"
+                    >
+                      Sair
+                    </button>
+                  </div>
+                ) : (
+                  <a
+                    href="/login"
+                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                  >
+                    Entrar
+                  </a>
+                )}
+              </div>
             </ul>
           </nav>
 
