@@ -56,14 +56,6 @@ export default function Header() {
                   Contato
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/login"
-                  className="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition-all"
-                >
-                  Login
-                </Link>
-              </li>
 
               <div>
                 {status === "authenticated" ? (
@@ -81,9 +73,9 @@ export default function Header() {
                 ) : (
                   <a
                     href="/login"
-                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                    className="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition-all"
                   >
-                    Entrar
+                    Login
                   </a>
                 )}
               </div>

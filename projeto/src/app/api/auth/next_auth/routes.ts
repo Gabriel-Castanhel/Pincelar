@@ -35,7 +35,25 @@ const handler = NextAuth({
     })
   ],
   session: { strategy: "jwt" },
-  pages: { signIn: "/login" }, // Sua página customizada
+  pages: { signIn: "/login" },
+
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.name = user.name;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (session.user) {
+        session.user.name = token.name;
+        // (session.user as any).id = token.id; 
+      }
+      return session;
+    }
+  },
+  secret: process.env.NEXTAUTH_SECRET,
 })
 
 export { handler as GET, handler as POST }
