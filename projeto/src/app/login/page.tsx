@@ -3,38 +3,37 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { FaArtstation, FaGoogle, FaEnvelope, FaLock } from "react-icons/fa";
-
-interface LoginData {
-  email: string;
-  password: string;
-}
+import { FaGoogle, FaEnvelope, FaLock } from "react-icons/fa";
+import { signIn } from "next-auth/react";
 
 export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
 
-    const response = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
+    const result = await signIn("credentials", {
+      email: email,
+      password: password,
+      redirect: false, // Impede o redirecionamento automático para tratar o erro
     });
 
-    const data = await response.json();
+    setIsLoading(false);
 
-    if (response.ok) {
-      alert("Bem-vindo de volta!");
-      router.push("/"); 
+    if (result?.error) {
+      alert("E-mail ou senha incorretos!");
+      console.error("Erro no Login:", result.error);
     } else {
-      alert(data.error);
+      alert("Bem-vindo de volta!");
+      router.push("/");
+      router.refresh();
     }
   };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="max-w-md w-full bg-white p-8 md:p-12 rounded-[2rem] shadow-2xl border border-gray-100">
@@ -66,7 +65,6 @@ export default function Login() {
           <div className="flex-1 h-[1px] bg-gray-200"></div>
         </div>
 
-        {/* Formulário */}
         <form onSubmit={handleLogin} className="space-y-5">
           <div className="space-y-1">
             <label className="text-sm font-semibold text-gray-700 ml-1">
