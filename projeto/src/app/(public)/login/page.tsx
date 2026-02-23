@@ -19,7 +19,7 @@ export default function Login() {
     const result = await signIn("credentials", {
       email: email,
       password: password,
-      redirect: false, // Impede o redirecionamento automático para tratar o erro
+      redirect: false
     });
 
     setIsLoading(false);
