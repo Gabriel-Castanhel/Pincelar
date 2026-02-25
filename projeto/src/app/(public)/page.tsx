@@ -17,7 +17,7 @@ export default function Home() {
       <Header />
       <Hero_banner />
 
-      <section className="py-16 px-4 flex flex-col items-center justify-center bg-gray-50">
+      <section className="py-16 px-4 flex flex-col items-center justify-center bg-background">
         <div className="max-w-6xl w-full flex flex-col items-center">
           <h1 className="text-3xl md:text-4xl font-bold text-center text-gradient-primary font-banner mb-12">
             Mas por que escolher o Pincelar?

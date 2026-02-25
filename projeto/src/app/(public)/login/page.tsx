@@ -16,17 +16,18 @@ export default function Login() {
     e.preventDefault();
     setIsLoading(true);
 
-    const result = await signIn("credentials", {
+    const resultado = await signIn("credentials", {
       email: email,
       password: password,
-      redirect: false
+      redirect: false,
+      callbackUrl: "/"
     });
 
     setIsLoading(false);
 
-    if (result?.error) {
+    if (resultado?.error) {
       alert("E-mail ou senha incorretos!");
-      console.error("Erro no Login:", result.error);
+      console.error("Erro no Login:", resultado.error);
     } else {
       alert("Bem-vindo de volta!");
       router.push("/");

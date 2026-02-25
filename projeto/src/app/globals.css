@@ -13,11 +13,10 @@
   --color-text: #000000;
 
   /* BACKGROUND */
-  --color-background: #e0e0e0;
+  --color-background: #f3f3f3;
 
   /* FONTS */
   --font-subtitle: "Poppins", sans-serif;
-  --font-banner: "WinterDraw", cursive;
   --font-text: "Open Sans", sans-serif;
 }
 

@@ -14,7 +14,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-18">
           <Link href="/" className="flex gap-3 items-center flex-shrink-0">
             <img
-              src="./logo-cheia.png"
+              src="/logo-cheia.png"
               alt="Logo"
               className="w-10 h-10 md:w-12 md:h-12"
             />
