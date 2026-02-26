@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "type": "module",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "pnpm dev",
+    "build": "pnpm build",
+    "start": "pnpm start",
     "lint": "eslint"
   },
   "dependencies": {
