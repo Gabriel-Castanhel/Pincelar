@@ -4,26 +4,36 @@ generator client {
 
 datasource db {
   provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  createdAt DateTime @default(now())
-  email     String   @unique
-  nome      String?
-  senha     String
-  role      Role     @default(USER)
-  posts     Post[]
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt   DateTime  @default(now())
+  email       String    @unique
+  name        String?
+  password    String
+  phoneNumber String    @default("000-000-0000")
+  role        Role      @default(USER)
+  arts        Art[]
+  profiles    Profile[]
 }
 
-model Post {
+model Art {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   published Boolean  @default(false)
   title     String
   author    User     @relation(fields: [authorId], references: [id])
-  authorId  String   @db.ObjectId // Deve ser do mesmo tipo que o id do User
+  authorId  String   @db.ObjectId
+}
+
+model Profile {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  bio    String
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @db.ObjectId
 }
 
 enum Role {
