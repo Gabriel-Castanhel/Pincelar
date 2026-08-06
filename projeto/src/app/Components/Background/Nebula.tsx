@@ -4,8 +4,8 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-import vertexShader from "./shaders/vertex";
-import fragmentShader from "./shaders/fragment";
+import vertexShader from "./Nebula/shaders/vertex";
+import fragmentShader from "./Nebula/shaders/fragment";
 
 export default function Nebula() {
   const material = useRef<THREE.ShaderMaterial>(null!);

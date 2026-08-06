@@ -1,3 +1,4 @@
+import MouseTrail from './Components/Mouse/MouseTrail'
 import './globals.css'
 
 export const metadata = {
@@ -13,6 +14,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body cz-shortcut-listen="true">
+        <MouseTrail />
         {children}
       </body>
     </html>
