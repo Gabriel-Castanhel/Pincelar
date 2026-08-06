@@ -1,13 +1,20 @@
-import "./styles/globals.css";
+import './globals.css'
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata = {
+  title: 'Meu App',
+  description: 'Descrição do app',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="pt-BR">
-      <head />
-      <body className="bg-gray-50">
-        
+      <body cz-shortcut-listen="true">
         {children}
       </body>
-    </html> 
+    </html>
   )
 }
