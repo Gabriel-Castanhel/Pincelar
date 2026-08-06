@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaEnvelope, FaInstagram, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 
 export default function Contato() {
